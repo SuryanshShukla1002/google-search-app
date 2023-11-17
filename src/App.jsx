@@ -16,5 +16,4 @@ function App() {
     </AppContext>
   );
 }
-
 export default App;
