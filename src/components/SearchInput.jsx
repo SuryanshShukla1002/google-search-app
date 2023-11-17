@@ -7,16 +7,15 @@ import MicIcon from "../assets/mic.svg";
 import ImageIcon from "../assets/image.svg";
 
 const SearchInput = () => {
-  const {query , startIndex} = useParams();
-    const [searchQuery , setSearchQuery] = useState( query || "");
-    const navigate = useNavigate();
+  const { query, startIndex } = useParams();
+  const [searchQuery, setSearchQuery] = useState(query || "");
+  const navigate = useNavigate();
 
-    const searchQueryhandler = (event) => {
-      if(event.key === 'Enter' && searchQuery.length > 0) {
-        navigate(`/${searchQuery}/${1}`);
-
-      }
+  const searchQueryhandler = (event) => {
+    if (event.key === "Enter" && searchQuery.length > 0) {
+      navigate(`/${searchQuery}/${1}`);
     }
+  };
   return (
     <div
       id="searchBox"
@@ -29,15 +28,19 @@ const SearchInput = () => {
         onKeyUp={searchQueryhandler}
         value={searchQuery}
         autoFocus
-        className='grow outline-0 text-black/[0.87]'
+        className="grow outline-0 text-black/[0.87]"
       />
-      <div className='flex items-center gap-3'>
+      <div className="flex items-center gap-3">
         {searchQuery && (
-            <IoMdClose size={24} color='#70757a' className='cursor-pointer' onClick={() => setSearchQuery("")}
-            />
+          <IoMdClose
+            size={24}
+            color="#70757a"
+            className="cursor-pointer"
+            onClick={() => setSearchQuery("")}
+          />
         )}
-        <img className='h-6 w-6 cursor-pointer' src={MicIcon} />
-        <img className='h-6 w-6 cursor-pointer' src={ImageIcon} />
+        <img className="h-6 w-6 cursor-pointer" src={MicIcon} />
+        <img className="h-6 w-6 cursor-pointer" src={ImageIcon} />
       </div>
     </div>
   );

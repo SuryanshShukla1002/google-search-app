@@ -26,7 +26,7 @@ const SearchResultHeader = () => {
         <div className="flex items-center grow">
           <Link to="/">
             <img className="hidden md:block w-[92px] mr-10" src={Logo} />
-          </Link> 
+          </Link>
           <SearchInput from="searchResult" />
         </div>
         <div className="hidden md:block">
